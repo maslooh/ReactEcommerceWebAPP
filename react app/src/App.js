@@ -13,11 +13,13 @@ export class App extends Component {
       <>
        
         <BrowserRouter>
-        <Header />
+          <div class="myContainer">
+            <Header />
             <div class="container my-5">
-              <AppRouter/>
+            <AppRouter />
             </div>
           <Footer/>
+            </div>
         </BrowserRouter>
       </>
     );

@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  
 }
 
 code {
@@ -16,4 +17,11 @@ code {
 }
 .card{
   text-decoration: none;
+}
+.footer{
+  position: sticky !important;
+  top: 100% !important;
+}
+.myContainer{
+  min-height: 100vh;
 }

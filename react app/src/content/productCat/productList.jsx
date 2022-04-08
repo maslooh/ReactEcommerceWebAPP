@@ -9,13 +9,13 @@ function ProductList() {
             categoriesCRUD.getCategoryProducts(params.id)
             .then((res) => res.json())
             .then(data => setList(data.products))
-    })
+    },[])
     return (
         <div class="row row-cols-1 row-cols-md-4 g-4">
                 {list.map(item => {
                     return (
                         <div class="col">
-                            <Link class="card text-dark" to={`products/${item.id}`}>
+                            <Link class="card text-dark" to={`/products/${item.id}`}>
                                     <img src={item.img} class="card-img-top" alt="..."/>
                                     <div class="card-body">
                                         <h5 class="card-title">{item.name}</h5>
