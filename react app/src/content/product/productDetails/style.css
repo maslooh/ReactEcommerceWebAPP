@@ -1,0 +1,20 @@
+.cardImg {
+  width: 400px;
+  height: 400px;
+}
+.card{
+    width: 18rem;
+}
+tr td i {
+  cursor: pointer;
+}
+.crudIcons{
+    visibility: hidden;
+}
+.crudIcons:hover{
+    color: black !important;
+    transform: scale(1.3) !important;
+}
+tr:hover .crudIcons{
+    visibility: visible;
+}

@@ -1,0 +1,224 @@
+{
+    "categories":[
+        {
+          "id": "625049056fce03742ba07b16",
+          "picture": "https://images.squarespace-cdn.com/content/v1/5432e8d7e4b0fd126503b83b/1521844177130-H4W17NIWUSGDZ0JPBLOW/mens+fashion+accessories+still+life+howlett+photography.jpg?format=1000w",
+          "name": "Fashion"
+        },
+        {
+          "id": "62504905759c5a46a5f58b25",
+          "picture": "https://www.chatelaine.com/wp-content/uploads/2021/12/grocery-prices-canada-2021-2022.jpg",
+          "name": "Grocires"
+        },
+        {
+            "id": "62504905aec3391fa69755a1",
+            "picture": "https://blessingstelecom.com/img/developerimg/choco_blessingstelecom_20200113100659_db/mebase/CustomSectionStyle/Images/original_200219061202_5e4cd1b2c5eb3.jpg",
+            "name": "Electronics"
+          }
+      ]
+      ,
+      "products":[
+        {
+          "id": "62504a40d24b5e6ca353da85",
+          "categoryId": "625049056fce03742ba07b16",
+          "name": "ipsum elit",
+          "details": "in proident quis nulla fugiat magna irure excepteur ea mollit",
+          "code": 0,
+          "quantity": 19,
+          "img": "https://nasijagaltangsel.websites.co.in/dummytemplate/img/product-placeholder.png",
+          "price":1200
+        },
+        {
+          "id": "62504a403930174742e8dc12",
+          "categoryId": "62504905aec3391fa69755a1",
+          "name": "consequat eiusmod",
+          "details": "enim qui ut minim cillum cillum excepteur duis enim labore",
+          "code": 1,
+          "quantity": 31,
+          "img": "https://nasijagaltangsel.websites.co.in/dummytemplate/img/product-placeholder.png",
+          "price":1200
+        },
+        {
+          "id": "62504a400e510d537d2e702e",
+          "categoryId": "62504905aec3391fa69755a1",
+          "name": "velit deserunt",
+          "details": "aute cillum dolore nostrud non elit elit voluptate id ut",
+          "code": 2,
+          "quantity": 12,
+          "img": "https://nasijagaltangsel.websites.co.in/dummytemplate/img/product-placeholder.png",
+          "price":1200
+        },
+        {
+          "id": "62504a40cfb6e7302b213f8c",
+          "categoryId": "62504905759c5a46a5f58b25",
+          "name": "aliqua aliqua",
+          "details": "tempor sint dolore irure laboris occaecat excepteur esse esse Lorem",
+          "code": 3,
+          "quantity": 32,
+          "img": "https://nasijagaltangsel.websites.co.in/dummytemplate/img/product-placeholder.png",
+          "price":1200
+        },
+        {
+          "id": "62504a40cc96633103a7e6d0",
+          "categoryId": "62504905aec3391fa69755a1",
+          "name": "officia mollit",
+          "details": "veniam cillum sunt eu voluptate aute labore do commodo reprehenderit",
+          "code": 4,
+          "quantity": 21,
+          "img": "https://nasijagaltangsel.websites.co.in/dummytemplate/img/product-placeholder.png",
+          "price":1200
+        },
+        {
+          "id": "62504a40c981fbe89513e28d",
+          "categoryId": "62504905aec3391fa69755a1",
+          "name": "amet anim",
+          "details": "ea eu aliqua eiusmod id est eiusmod ea nulla qui",
+          "code": 5,
+          "quantity": 25,
+          "img": "https://nasijagaltangsel.websites.co.in/dummytemplate/img/product-placeholder.png",
+          "price":1200
+        },
+        {
+          "id": "62504a40969455d0c15644d3",
+          "categoryId": "62504905759c5a46a5f58b25",
+          "name": "duis do",
+          "details": "magna enim aute commodo ut mollit ex consectetur officia et",
+          "code": 6,
+          "quantity": 18,
+          "img": "https://nasijagaltangsel.websites.co.in/dummytemplate/img/product-placeholder.png",
+          "price":1200
+        },
+        {
+          "id": "62504a407df5f8da9fcaffbf",
+          "categoryId": "625049056fce03742ba07b16",
+          "name": "proident elit",
+          "details": "veniam incididunt velit labore aute irure sint fugiat nulla et",
+          "code": 7,
+          "quantity": 27,
+          "img": "https://nasijagaltangsel.websites.co.in/dummytemplate/img/product-placeholder.png",
+          "price":1200
+        },
+        {
+          "id": "62504a40bd8537ce0ceee441",
+          "categoryId": "62504905aec3391fa69755a1",
+          "name": "nulla in",
+          "details": "ut reprehenderit aliquip incididunt commodo non eiusmod do do occaecat",
+          "code": 8,
+          "quantity": 23,
+          "img": "https://nasijagaltangsel.websites.co.in/dummytemplate/img/product-placeholder.png",
+          "price":1200
+        },
+        {
+          "id": "62504a40aa4126f03a477f49",
+          "categoryId": "62504905759c5a46a5f58b25",
+          "name": "veniam amet",
+          "details": "eiusmod sint quis sint anim sint aliquip est ea officia",
+          "code": 9,
+          "quantity": 13,
+          "img": "https://nasijagaltangsel.websites.co.in/dummytemplate/img/product-placeholder.png",
+          "price":1200
+        },
+        {
+          "id": "62504a40a5afa55ee4b11711",
+          "categoryId": "62504905aec3391fa69755a1",
+          "name": "aute consectetur",
+          "details": "velit consequat aute sunt reprehenderit velit sint labore qui aliqua",
+          "code": 10,
+          "quantity": 22,
+          "img": "https://nasijagaltangsel.websites.co.in/dummytemplate/img/product-placeholder.png",
+          "price":1200
+        },
+        {
+          "id": "62504a40db7b4affc91bfcd8",
+          "categoryId": "62504905aec3391fa69755a1",
+          "name": "aliqua occaecat",
+          "details": "enim dolor labore occaecat consequat et Lorem officia mollit sit",
+          "code": 11,
+          "quantity": 16,
+          "img": "https://nasijagaltangsel.websites.co.in/dummytemplate/img/product-placeholder.png",
+          "price":1200
+        },
+        {
+          "id": "62504a4051869022d743ac65",
+          "categoryId": "625049056fce03742ba07b16",
+          "name": "aliquip minim",
+          "details": "magna commodo eiusmod nisi ipsum ex cupidatat nostrud deserunt laborum",
+          "code": 12,
+          "quantity": 25,
+          "img": "https://nasijagaltangsel.websites.co.in/dummytemplate/img/product-placeholder.png",
+          "price":1200
+        },
+        {
+          "id": "62504a40fb067ba77d115315",
+          "categoryId": "62504905aec3391fa69755a1",
+          "name": "Lorem pariatur",
+          "details": "consectetur aliquip cillum id ipsum id nulla mollit velit cillum",
+          "code": 13,
+          "quantity": 29,
+          "img": "https://nasijagaltangsel.websites.co.in/dummytemplate/img/product-placeholder.png",
+          "price":1200
+        },
+        {
+          "id": "62504a4004805ca4cd9df81c",
+          "categoryId": "62504905aec3391fa69755a1",
+          "name": "laboris sit",
+          "details": "consequat nulla in exercitation dolor qui magna nisi deserunt exercitation",
+          "code": 14,
+          "quantity": 10,
+          "img": "https://nasijagaltangsel.websites.co.in/dummytemplate/img/product-placeholder.png",
+          "price":1200
+        },
+        {
+          "id": "62504a408e0a3f5ccacfcd95",
+          "categoryId": "625049056fce03742ba07b16",
+          "name": "deserunt anim",
+          "details": "irure cillum culpa ex sunt quis elit fugiat tempor voluptate",
+          "code": 15,
+          "quantity": 19,
+          "img": "https://nasijagaltangsel.websites.co.in/dummytemplate/img/product-placeholder.png",
+          "price":1200
+        },
+        {
+          "id": "62504a407f30f000b7efbf65",
+          "categoryId": "625049056fce03742ba07b16",
+          "name": "pariatur est",
+          "details": "tempor eiusmod ea est est proident officia sint magna do",
+          "code": 16,
+          "quantity": 35,
+          "img": "https://nasijagaltangsel.websites.co.in/dummytemplate/img/product-placeholder.png",
+          "price":1200
+        },
+        {
+          "id": "62504a40f140e3df8d25295c",
+          "categoryId": "62504905aec3391fa69755a1",
+          "name": "do reprehenderit",
+          "details": "est sit nulla excepteur est reprehenderit aute commodo aliqua ut",
+          "code": 17,
+          "quantity": 29,
+          "img": "https://nasijagaltangsel.websites.co.in/dummytemplate/img/product-placeholder.png",
+          "price":1200
+        },
+        {
+          "id": "62504a40d5e1a8f5c9623399",
+          "categoryId": "625049056fce03742ba07b16",
+          "name": "dolor qui",
+          "details": "culpa anim incididunt officia et non eiusmod est elit ad",
+          "code": 18,
+          "quantity": 23,
+          "img": "https://nasijagaltangsel.websites.co.in/dummytemplate/img/product-placeholder.png",
+          "price":1200
+        },
+        {
+          "id": "62504a40a8d67c16c0441b3d",
+          "categoryId": "625049056fce03742ba07b16",
+          "name": "enim laboris",
+          "details": "aliqua ipsum consectetur elit commodo nostrud eu adipisicing mollit in",
+          "code": 19,
+          "quantity": 17,
+          "img": "https://nasijagaltangsel.websites.co.in/dummytemplate/img/product-placeholder.png",
+          "price":1200
+        }
+      ],
+      "cartItems":[
+      ]
+}
