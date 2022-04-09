@@ -1,7 +1,14 @@
-import {Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
+import { useEffect, useState } from "react"
+import cartCRUD from '../content/cart/dataModel'
 let Header = () => {
+  const [len, setLen] = useState(0)
+  useEffect(() => {
+    cartCRUD.getAllItems().then(res=>res.json()).then(data=>setLen(data.length))
+  }, [])
+  
     return (
-        <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
+        <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
     <a class="navbar-brand" href="/"><i class="fa-brands h3 fa-amazon"></i></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -16,11 +23,16 @@ let Header = () => {
           <a class="nav-link" aria-current="page" href="#">Products</a>
         </li>
       </ul>
-      <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
-      <a class="nav-link" href="#"><i class="fa-solid h4 text-black fa-cart-shopping"></i></a>
+            <form class="d-flex">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+            </form>
+            <Link class="nav-link position-relative me-3 mt-2" to="/cart">
+              <i class="fa-solid h4 text-white fa-cart-shopping"></i>
+              <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+               {len}
+              <span class="visually-hidden">unread messages</span>
+            </span>
+            </Link>
     </div>
   </div>
 </nav>

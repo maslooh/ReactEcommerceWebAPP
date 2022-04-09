@@ -21,7 +21,29 @@ code {
 .footer{
   position: sticky !important;
   top: 100% !important;
+  border-top: 1px solid rgb(223, 220, 220);
 }
 .myContainer{
   min-height: 100vh;
 }
+.qty{
+  width: 10px !important;
+}
+/* .searchSpace,
+.searchSpace button
+{
+  background-color: white;
+}
+.searchSpace{
+  display:flex;
+  border-radius: 50%;
+}
+.searchSpace button{
+  border: none;
+  margin: 0;
+}
+
+.searchSpace input{
+  border: none;
+  margin: 0;
+} */

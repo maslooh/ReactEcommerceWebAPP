@@ -13,7 +13,7 @@ export class App extends Component {
       <>
        
         <BrowserRouter>
-          <div class="myContainer">
+          <div class="myContainer bg-light">
             <Header />
             <div class="container my-5">
             <AppRouter />

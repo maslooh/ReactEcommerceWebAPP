@@ -20,7 +20,6 @@ function ProductList() {
                                     <div class="card-body">
                                         <h5 class="card-title">{item.name}</h5>
                                         <p class="card-text">{item.price}$</p>
-                                        <p class="card-text">{item.details }</p>
                                         <p class="card-text"><small class="text-muted">{item.quantity} items in stock</small></p>
                                     </div>
                             </Link>
