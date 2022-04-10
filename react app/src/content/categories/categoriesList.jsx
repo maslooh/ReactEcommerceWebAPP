@@ -8,7 +8,7 @@ function CategoriesList() {
         categoriesCRUD.getAllCategories()
         .then((res) => res.json())
             .then(data => setList(data))
-    })
+    },[])
     return (
         <div class="row row-cols-1 row-cols-md-2 g-4">
                 {list.map(cat => {

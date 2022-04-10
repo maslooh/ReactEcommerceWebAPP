@@ -221,27 +221,12 @@
   "cartItems": [
     {
       "product": {
-        "id": "62504a40969455d0c15644d3",
-        "categoryId": "62504905759c5a46a5f58b25",
-        "name": "duis do",
-        "details": "magna enim aute commodo ut mollit ex consectetur officia et",
-        "code": 6,
-        "quantity": 18,
-        "img": "https://nasijagaltangsel.websites.co.in/dummytemplate/img/product-placeholder.png",
-        "price": 1200
-      },
-      "quantity": "2",
-      "totalPrice": 2400,
-      "id": 2
-    },
-    {
-      "product": {
-        "id": "62504a40cfb6e7302b213f8c",
-        "categoryId": "62504905759c5a46a5f58b25",
-        "name": "aliqua aliqua",
-        "details": "tempor sint dolore irure laboris occaecat excepteur esse esse Lorem",
-        "code": 3,
-        "quantity": 32,
+        "id": "62504a407df5f8da9fcaffbf",
+        "categoryId": "625049056fce03742ba07b16",
+        "name": "proident elit",
+        "details": "veniam incididunt velit labore aute irure sint fugiat nulla et",
+        "code": 7,
+        "quantity": 27,
         "img": "https://nasijagaltangsel.websites.co.in/dummytemplate/img/product-placeholder.png",
         "price": 1200
       },
@@ -251,12 +236,12 @@
     },
     {
       "product": {
-        "id": "62504a40cfb6e7302b213f8c",
-        "categoryId": "62504905759c5a46a5f58b25",
-        "name": "aliqua aliqua",
-        "details": "tempor sint dolore irure laboris occaecat excepteur esse esse Lorem",
-        "code": 3,
-        "quantity": 32,
+        "id": "62504a407df5f8da9fcaffbf",
+        "categoryId": "625049056fce03742ba07b16",
+        "name": "proident elit",
+        "details": "veniam incididunt velit labore aute irure sint fugiat nulla et",
+        "code": 7,
+        "quantity": 27,
         "img": "https://nasijagaltangsel.websites.co.in/dummytemplate/img/product-placeholder.png",
         "price": 1200
       },
@@ -278,21 +263,6 @@
       "quantity": 1,
       "totalPrice": 1200,
       "id": 5
-    },
-    {
-      "product": {
-        "id": "62504a40db7b4affc91bfcd8",
-        "categoryId": "62504905aec3391fa69755a1",
-        "name": "aliqua occaecat",
-        "details": "enim dolor labore occaecat consequat et Lorem officia mollit sit",
-        "code": 11,
-        "quantity": 16,
-        "img": "https://nasijagaltangsel.websites.co.in/dummytemplate/img/product-placeholder.png",
-        "price": 1200
-      },
-      "quantity": 1,
-      "totalPrice": 1200,
-      "id": 6
     }
   ]
 }

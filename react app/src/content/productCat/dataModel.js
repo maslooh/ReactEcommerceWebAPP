@@ -22,12 +22,6 @@ let productsCRUD = {
                 "Content-type": "application/json; charset=UTF-8"
             }
         })
-         
-        // Converting to JSON
-        .then(response => response.json())
-         
-        // Displaying results to console
-        .then(json => console.log(json));
     }
 }
 export default productsCRUD

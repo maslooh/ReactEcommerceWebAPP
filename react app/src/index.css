@@ -18,6 +18,7 @@ code {
 .card{
   text-decoration: none;
 }
+
 .footer{
   position: sticky !important;
   top: 100% !important;

@@ -1,8 +1,7 @@
 import productsCRUD from './dataModel'
 import React, { useState, useEffect } from 'react';
-import {Link } from 'react-router-dom'
 import { useParams } from "react-router-dom";
-import { Button, Modal } from 'react-bootstrap';
+import {  Modal } from 'react-bootstrap';
 
 function ProductDetails() {
     const [product, setProduct] = useState({})
@@ -26,7 +25,7 @@ function ProductDetails() {
         setModalShow(true)
         setTimeout(() => {
             setModalShow(false)
-        }, 1500);
+        }, 1200);
     }
     return (
         <div class="card mb-3">
