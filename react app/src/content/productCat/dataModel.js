@@ -9,7 +9,7 @@ let productsCRUD = {
         return fetch(url+id)
     },
     sendToCart(cartItem) {
-         fetch(cartUrl, {
+        fetch(cartUrl, {
      
             // Adding method type
             method: "POST",

@@ -3,7 +3,7 @@ import { useEffect, useState } from "react"
 import {Link} from "react-router-dom"
 import cartCRUD from './dataModel'
 
-const CartItemsList = () => {
+const CartItemsList = (props) => {
 
     const [list, setList] = useState([])
     const [change, setChange] = useState(false)
@@ -32,6 +32,7 @@ const CartItemsList = () => {
         return ( 
             <>
                 <div class="card p-3">
+                <h2>Shopping cart</h2>
                 <table class="table">
                 <tbody>
                     <tr>
@@ -48,7 +49,7 @@ const CartItemsList = () => {
                                     <p>{item.product.details}</p>
                                     <div class="badge bg-light text-dark">Quantity:{item.quantity}</div>
                                     <Link t to={"/cart"} class="ms-2" onClick={() => {
-                                        cartCRUD.deleteItem(item.id).then(getCartItems()).then(setChange(() => change?false:true))
+                                        cartCRUD.deleteItem(item.id).then(getCartItems()).then(setChange(() => change?false:true)).then(props.updateRef)
                                     }} style={{ textDecoration: "underline", color: "blue", cursor: "pointer" }}>delete</Link>
                                 </td>
                                 <th class="text-end">{item.totalPrice}$</th>

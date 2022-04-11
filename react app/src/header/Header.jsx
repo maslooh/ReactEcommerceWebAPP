@@ -1,11 +1,7 @@
 import { Link } from 'react-router-dom'
 import { useEffect, useState } from "react"
-import cartCRUD from '../content/cart/dataModel'
-let Header = () => {
-  const [len, setLen] = useState(0)
-  useEffect(() => {
-    cartCRUD.getAllItems().then(res=>res.json()).then(data=>setLen(data.length))
-  }, [])
+
+let Header = (props) => {
   
     return (
         <nav class="navbar  navbar-expand-lg navbar-dark bg-dark">
@@ -28,9 +24,9 @@ let Header = () => {
             </form>
             <Link class="nav-link position-relative me-3 mt-2" to="/cart">
               <i class="fa-solid h4 text-white fa-cart-shopping"></i>
-              {len>0 &&
+              {props.cartItems>0 &&
                     <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                      {len}
+                      {props.cartItems}
                       <span class="visually-hidden">unread messages</span>
                     </span>
               }

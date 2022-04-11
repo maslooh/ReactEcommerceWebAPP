@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from "react-router-dom";
 import {  Modal } from 'react-bootstrap';
 
-function ProductDetails() {
+function ProductDetails(props) {
     const [product, setProduct] = useState({})
     const [modalShow, setModalShow] = useState(false);
     const [qty, setQty] = useState(1)
@@ -15,13 +15,14 @@ function ProductDetails() {
             .then(data => setProduct(data))
     }, [])
 
-    let addCartItem=()=>{
+    let addCartItem = () => {
         let cartItem = {
             product: product,
             quantity: qty,
             totalPrice:qty*product.price
         }
         productsCRUD.sendToCart(cartItem)
+        props.updateRef()
         setModalShow(true)
         setTimeout(() => {
             setModalShow(false)
