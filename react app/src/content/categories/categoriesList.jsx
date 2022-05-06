@@ -1,7 +1,7 @@
 import categoriesCRUD from './dataModel'
 import React, { useState, useEffect } from 'react';
 import {Link } from 'react-router-dom'
-
+import Search from "../../search/Search"
 function CategoriesList() {
     const [list, setList] = useState([])
     useEffect(()=>{

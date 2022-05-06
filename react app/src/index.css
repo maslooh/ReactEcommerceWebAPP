@@ -30,6 +30,9 @@ code {
 .qty{
   width: 10px !important;
 }
+.aa-Input{
+  width: 400px !important;
+}
 /* .searchSpace,
 .searchSpace button
 {
