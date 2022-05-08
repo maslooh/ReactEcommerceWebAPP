@@ -22,11 +22,13 @@ function ProductDetails(props) {
             totalPrice:qty*product.price
         }
         productsCRUD.sendToCart(cartItem)
-        props.updateRef()
-        setModalShow(true)
-        setTimeout(() => {
-            setModalShow(false)
-        }, 1200);
+            .then(() => {
+                props.updateRef()
+                setModalShow(true)
+                setTimeout(() => {
+                    setModalShow(false)
+                }, 1200);
+            })
     }
     return (
         <div class="card mb-3">

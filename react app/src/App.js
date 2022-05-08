@@ -25,7 +25,7 @@ export class App extends Component {
   render() {
     return (
       <>
-        <BrowserRouter>
+        {/* <BrowserRouter> */}
           <div class="myContainer bg-light">
             <Header  cartItems={this.state.cartItems} />
               <div class="container my-5">
@@ -33,7 +33,7 @@ export class App extends Component {
               </div>
             <Footer/>
           </div>
-        </BrowserRouter>
+        {/* </BrowserRouter> */}
       </>
     );
   }

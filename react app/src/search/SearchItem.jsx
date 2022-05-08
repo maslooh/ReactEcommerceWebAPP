@@ -1,8 +1,9 @@
 import React, { createElement } from 'react';
-import {Link} from "react-router-dom"
+import { Link } from "react-router-dom"
+
 export function ProductItem({ hit, components }) {
   return (
-      <a href={`/products/${hit.id}`} className="aa-ItemLink">
+    <a href={`/products/${hit.id}`} className="aa-ItemLink">
           <div className="aa-ItemContent">
               <img
                   className="align-top"

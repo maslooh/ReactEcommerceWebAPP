@@ -9,13 +9,28 @@ let productsCRUD = {
         return fetch(url+id)
     },
     sendToCart(cartItem) {
-        fetch(cartUrl, {
+        return fetch(cartUrl, {
      
             // Adding method type
             method: "POST",
              
             // Adding body or contents to send
             body: JSON.stringify(cartItem),
+             
+            // Adding headers to the request
+            headers: {
+                "Content-type": "application/json; charset=UTF-8"
+            }
+        })
+    },
+    AddProduct(product) {
+        return fetch(url, {
+     
+            // Adding method type
+            method: "POST",
+             
+            // Adding body or contents to send
+            body: JSON.stringify(product),
              
             // Adding headers to the request
             headers: {

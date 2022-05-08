@@ -1,9 +1,18 @@
 import { Link,NavLink } from 'react-router-dom'
 import { useEffect, useState } from "react"
-import algoliasearch from 'algoliasearch/lite';
-import Search from '../search/Search'
 import { BrowserRouter } from 'react-router-dom';
 import { Input } from 'antd';
+import React, { createElement } from 'react';
+import { getAlgoliaResults } from '@algolia/autocomplete-js';
+import { Autocomplete } from '../search/Autocomplete';
+import { ProductItem } from '../search/SearchItem';
+import algoliasearch from 'algoliasearch';
+
+
+const appId = 'XOWB64MIEO';
+const apiKey = '6a650d7dfb5af8c9393cfffbfcf53842';
+const searchClient = algoliasearch(appId, apiKey);
+
 let Header = (props) => {
   return (
     <nav class="navbar  navbar-expand-lg navbar-dark bg-dark">
@@ -18,13 +27,38 @@ let Header = (props) => {
       <NavLink className={"nav-link"} activeClassName="active" to="/">Home</NavLink>
     </li>
     <li class="nav-item">
-      <NavLink className={"nav-link"} activeClassName="active" to="/">Add Category</NavLink>
+      <NavLink className={"nav-link"} activeClassName="active" to="/addCategory">Add Category</NavLink>
     </li>
     <li class="nav-item">
-      <NavLink className={"nav-link"} activeClassName="active" to="/">Add Product</NavLink>
+      <NavLink className={"nav-link"} activeClassName="active" to="/addProduct">Add Product</NavLink>
     </li>
   </ul>
-        <Search/>
+  <Autocomplete
+        openOnFocus={true}
+        getSources={({ query }) => [
+          {
+            sourceId: 'Products',
+            getItems() {
+              return getAlgoliaResults({
+                searchClient,
+                queries: [
+                  {
+                    indexName: 'Products',
+                    query,
+                  },
+                ],
+              });
+            },
+            templates: {
+              item({ item, components }) {
+                return (
+                    <ProductItem hit={item} components={components} />
+                    )
+              },
+            },
+          },
+        ]}
+      />
         <Link class="nav-link position-relative me-3 mt-2" to="/cart">
           <i class="fa-solid h4 text-white fa-cart-shopping"></i>
           {props.cartItems>0 &&

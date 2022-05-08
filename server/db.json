@@ -3,17 +3,26 @@
     {
       "id": "625049056fce03742ba07b16",
       "picture": "https://images.squarespace-cdn.com/content/v1/5432e8d7e4b0fd126503b83b/1521844177130-H4W17NIWUSGDZ0JPBLOW/mens+fashion+accessories+still+life+howlett+photography.jpg?format=1000w",
-      "name": "Fashion"
+      "name": "Fashion",
+      "description": "This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer."
     },
     {
       "id": "62504905759c5a46a5f58b25",
       "picture": "https://www.chatelaine.com/wp-content/uploads/2021/12/grocery-prices-canada-2021-2022.jpg",
-      "name": "Grocires"
+      "name": "Grocires",
+      "description": "This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer."
     },
     {
       "id": "62504905aec3391fa69755a1",
       "picture": "https://blessingstelecom.com/img/developerimg/choco_blessingstelecom_20200113100659_db/mebase/CustomSectionStyle/Images/original_200219061202_5e4cd1b2c5eb3.jpg",
-      "name": "Electronics"
+      "name": "Electronics",
+      "description": "This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer."
+    },
+    {
+      "picture": "https://fastcdn.pro/FileGallery/sermehiranian.com/Posts/3360_SL%20CR.jpg",
+      "name": "Furniture",
+      "description": "All the furniture that you need",
+      "id": "me3yC4-"
     }
   ],
   "products": [
@@ -216,23 +225,53 @@
       "quantity": 17,
       "img": "https://nasijagaltangsel.websites.co.in/dummytemplate/img/product-placeholder.png",
       "price": 1200
+    },
+    {
+      "name": "butter",
+      "categoryId": "62504905759c5a46a5f58b25",
+      "details": "organic butter",
+      "code": "b-12",
+      "quantity": "100",
+      "img": "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F23%2F2020%2F10%2F07%2Ftypes-of-butter-varieties-guide-2000.jpg&q=60",
+      "price": "10",
+      "id": "o_4oXec"
+    },
+    {
+      "name": "chocolate",
+      "categoryId": "62504905759c5a46a5f58b25",
+      "details": "dark chocolate",
+      "code": "c-12",
+      "quantity": "200",
+      "img": "https://www.greenqueen.com.hk/wp-content/uploads/2021/07/Lab-Grown-Chocolate-Could-Be-The-Future-of-Sustainable-Confectionery.jpg",
+      "price": "5",
+      "id": "nHEb9GI"
+    },
+    {
+      "name": "onion",
+      "categoryId": "62504905759c5a46a5f58b25",
+      "details": "red onion",
+      "code": "o-19",
+      "quantity": "200",
+      "img": "https://produits.bienmanger.com/36700-0w470h470_Organic_Red_Onion_From_Italy.jpg",
+      "price": "8",
+      "id": "StAFI4H"
     }
   ],
   "cartItems": [
     {
       "product": {
-        "id": "62504a40969455d0c15644d3",
-        "categoryId": "62504905759c5a46a5f58b25",
-        "name": "duis do",
-        "details": "magna enim aute commodo ut mollit ex consectetur officia et",
-        "code": 6,
-        "quantity": 18,
+        "id": "62504a407df5f8da9fcaffbf",
+        "categoryId": "625049056fce03742ba07b16",
+        "name": "proident elit",
+        "details": "veniam incididunt velit labore aute irure sint fugiat nulla et",
+        "code": 7,
+        "quantity": 27,
         "img": "https://nasijagaltangsel.websites.co.in/dummytemplate/img/product-placeholder.png",
         "price": 1200
       },
       "quantity": 1,
       "totalPrice": 1200,
-      "id": 8
+      "id": 1
     },
     {
       "product": {
@@ -245,9 +284,9 @@
         "img": "https://nasijagaltangsel.websites.co.in/dummytemplate/img/product-placeholder.png",
         "price": 1200
       },
-      "quantity": "2",
-      "totalPrice": 2400,
-      "id": 9
+      "quantity": 1,
+      "totalPrice": 1200,
+      "id": 2
     }
   ]
 }

@@ -8,9 +8,11 @@ import { BrowserRouter } from 'react-router-dom';
 
 const appId = 'XOWB64MIEO';
 const apiKey = '6a650d7dfb5af8c9393cfffbfcf53842';
+
 // const appId = 'latency';
 // const apiKey = '6be0576ff61c053d5f9a3225e2a90f76';
 const searchClient = algoliasearch(appId, apiKey);
+const index =searchClient.initIndex('products')
 
 const Search = (props) => {
     return (
