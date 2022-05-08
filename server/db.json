@@ -257,36 +257,5 @@
       "id": "StAFI4H"
     }
   ],
-  "cartItems": [
-    {
-      "product": {
-        "id": "62504a407df5f8da9fcaffbf",
-        "categoryId": "625049056fce03742ba07b16",
-        "name": "proident elit",
-        "details": "veniam incididunt velit labore aute irure sint fugiat nulla et",
-        "code": 7,
-        "quantity": 27,
-        "img": "https://nasijagaltangsel.websites.co.in/dummytemplate/img/product-placeholder.png",
-        "price": 1200
-      },
-      "quantity": 1,
-      "totalPrice": 1200,
-      "id": 1
-    },
-    {
-      "product": {
-        "id": "62504a407df5f8da9fcaffbf",
-        "categoryId": "625049056fce03742ba07b16",
-        "name": "proident elit",
-        "details": "veniam incididunt velit labore aute irure sint fugiat nulla et",
-        "code": 7,
-        "quantity": 27,
-        "img": "https://nasijagaltangsel.websites.co.in/dummytemplate/img/product-placeholder.png",
-        "price": 1200
-      },
-      "quantity": 1,
-      "totalPrice": 1200,
-      "id": 2
-    }
-  ]
+  "cartItems": []
 }

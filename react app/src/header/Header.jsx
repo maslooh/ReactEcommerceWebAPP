@@ -61,9 +61,11 @@ let Header = (props) => {
       />
         <Link class="nav-link position-relative me-3 mt-2" to="/cart">
           <i class="fa-solid h4 text-white fa-cart-shopping"></i>
-          {props.cartItems>0 &&
+          {props.cartItems.length>0 &&
                 <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                  {props.cartItems}
+                {
+                  props.cartItems.reduce((acc,obj) => {return acc+obj.quantity},0)
+                }
                   <span class="visually-hidden">unread messages</span>
                 </span>
           }

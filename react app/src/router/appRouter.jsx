@@ -11,12 +11,12 @@ const AppRouter = (props) => {
             <Route path="/" element={<CategoriesList/>}/>
             <Route path="/:id" element={<ProductList />} />
             <Route path="/products" element={<CategoriesList/>} />
-            <Route path="/products/:id" element={<ProductDetails updateRef={props.updateRef} />} />
+            <Route path="/products/:id" element={<ProductDetails updateRef={props.updateRef} cartItems={props.cartItems} />} />
             <Route path="/cart" element={<CartItemsList updateRef={props.updateRef} />} />
             <Route path="/addProduct" element={<AddProduct />} />
             <Route path="/addCategory" element={<AddCategory/>}/>
         </Routes>
     );
 }
- 
+
 export default AppRouter;

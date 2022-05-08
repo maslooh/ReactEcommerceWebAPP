@@ -11,7 +11,7 @@ import cartCRUD from './content/cart/dataModel'
 export class App extends Component {
 
   state = {
-    cartItems:0
+    cartItems: []
   }
 
   componentDidMount() {
@@ -20,7 +20,7 @@ export class App extends Component {
   updateCartItems=()=> {
     cartCRUD.getAllItems()
       .then(res => res.json())
-      .then(data => this.setState({ cartItems:data.length }))
+      .then(data => this.setState({ cartItems:data }))
   }
   render() {
     return (
@@ -29,7 +29,7 @@ export class App extends Component {
           <div class="myContainer bg-light">
             <Header  cartItems={this.state.cartItems} />
               <div class="container my-5">
-                <AppRouter updateRef={this.updateCartItems} cartItems={this.state.cartItems} />
+                <AppRouter updateRef={this.updateCartItems} cartItems={this.state.cartItems}/>
               </div>
             <Footer/>
           </div>
