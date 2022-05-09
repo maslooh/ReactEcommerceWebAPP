@@ -257,5 +257,21 @@
       "id": "StAFI4H"
     }
   ],
-  "cartItems": []
+  "cartItems": [
+    {
+      "product": {
+        "id": "62504a40969455d0c15644d3",
+        "categoryId": "62504905759c5a46a5f58b25",
+        "name": "duis do",
+        "details": "magna enim aute commodo ut mollit ex consectetur officia et",
+        "code": 6,
+        "quantity": 18,
+        "img": "https://nasijagaltangsel.websites.co.in/dummytemplate/img/product-placeholder.png",
+        "price": 1200
+      },
+      "quantity": 2,
+      "totalPrice": 3600,
+      "id": 1
+    }
+  ]
 }

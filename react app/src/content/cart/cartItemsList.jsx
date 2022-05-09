@@ -2,10 +2,11 @@
 import { useEffect, useState } from "react"
 import {Link} from "react-router-dom"
 import cartCRUD from './dataModel'
-
+import {  Modal,Button } from 'react-bootstrap';
 const CartItemsList = (props) => {
-
+    const [show, setShow] = useState(false);
     const [list, setList] = useState([])
+    const [id, setId] = useState(0)
     const [change, setChange] = useState(false)
 
     let getCartItems =() => {
@@ -13,7 +14,17 @@ const CartItemsList = (props) => {
             .then(res => res.json())
             .then(data => setList(data))
     }
-
+    let deleteItem=(_id) => {
+        cartCRUD.deleteItem(_id)
+            .then(props.updateRef)
+            .then(setChange(!change))
+            .then(setShow(false))
+    }
+    let editQuantity = (op,item) => {
+        op == "+" ? ++item.quantity : --item.quantity;
+        cartCRUD.editItem(item.id, item)
+        .then(props.updateRef)
+    }
     useEffect(() => {
         getCartItems()
     }, [change])
@@ -47,10 +58,13 @@ const CartItemsList = (props) => {
                                 <td>
                                     <b>{item.product.name}</b>
                                     <p>{item.product.details}</p>
-                                    <div class="badge bg-light text-dark">Quantity:{item.quantity}</div>
-                                    <Link t to={"/cart"} class="ms-2" onClick={() => {
-                                        cartCRUD.deleteItem(item.id).then(getCartItems()).then(setChange(() => change?false:true)).then(props.updateRef)
-                                    }} style={{ textDecoration: "underline", color: "blue", cursor: "pointer" }}>delete</Link>
+                                    {/* <div class="badge bg-light text-dark">Quantity:{item.quantity}</div> */}
+                                    <div class="input-group mb-3">
+                                        <button onClick={() => editQuantity("+", item)} class="input-group-text">+</button>
+                                        <input value={item.quantity} type="text" style={{flex:"none"}} class="form-control w-25 bg-white" disabled />
+                                        <button onClick={()=>editQuantity("-",item)} class="input-group-text">-</button>
+                                    </div>
+                                    <Link t to={"/cart"} onClick={() => { setShow(true); setId(item.id)}} style={{ textDecoration: "underline", color: "blue", cursor: "pointer" }}>delete</Link>
                                 </td>
                                 <th class="text-end">{item.totalPrice}$</th>
                             </tr>
@@ -66,7 +80,20 @@ const CartItemsList = (props) => {
                         </tfoot>
                     </table>
                 </div>
-                
+                <Modal show={show} onHide={()=>setShow(false)} animation={false} centered>
+                <Modal.Header closeButton>
+                <Modal.Title>Delete Item</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>Delete this item?</Modal.Body>
+                <Modal.Footer>
+                <Button variant="secondary" onClick={()=>setShow(false)}>
+                    Close
+                </Button>
+                <Button variant="primary" onClick={()=>deleteItem(id)}>
+                    Delete
+                </Button>
+                </Modal.Footer>
+            </Modal>
             </>
          );
     }

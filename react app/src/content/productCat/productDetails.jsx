@@ -7,6 +7,7 @@ import cartCRUD from "../cart/dataModel"
 function ProductDetails(props) {
     const [product, setProduct] = useState({})
     const [modalShow, setModalShow] = useState(false);
+    
     const [qty, setQty] = useState(1)
     let params = useParams();
 
@@ -96,6 +97,7 @@ function ProductDetails(props) {
                     <h4>Successfully added  <i class="fa-solid h-1 text-success fa-check"></i></h4>
                 </Modal.Body>
             </Modal>
+            
         </div>
     )
 }

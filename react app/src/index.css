@@ -33,6 +33,26 @@ code {
 .aa-Input{
   width: 400px !important;
 }
+#close{
+  width: 0px;
+  height: 0px;
+  background-color: rgba(255, 255, 255, 0.669);
+  border-radius: 50%;
+  top: -70px;
+  left: -70px;
+  visibility: hidden;
+  transition: 200ms;
+}
+.card:hover #close{
+  visibility: visible;
+  width: 140px;
+  height: 140px;
+  transition: 200ms;
+}
+.CloseButton {
+  top: 70px;
+  left: 70px;
+}
 /* .searchSpace,
 .searchSpace button
 {
