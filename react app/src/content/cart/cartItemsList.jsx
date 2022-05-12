@@ -1,29 +1,42 @@
 
 import { useEffect, useState } from "react"
 import {Link} from "react-router-dom"
-import cartCRUD from './dataModel'
-import {  Modal,Button } from 'react-bootstrap';
+import cartCRUD from './cartDataModel'
+// import { Modal, Button } from 'react-bootstrap';
+import { Popconfirm, message, Skeleton } from 'antd'
+
 const CartItemsList = (props) => {
-    const [show, setShow] = useState(false);
+    const [loading, setLoading] = useState(true);
     const [list, setList] = useState([])
-    const [id, setId] = useState(0)
+    // const [id, setId] = useState(0)
     const [change, setChange] = useState(false)
 
     let getCartItems =() => {
         cartCRUD.getAllItems()
             .then(res => res.json())
-            .then(data => setList(data))
+            .then(data => {
+                setList(data)
+                setLoading(false)
+            })
     }
     let deleteItem=(_id) => {
         cartCRUD.deleteItem(_id)
-            .then(props.updateRef)
+            .then(props.updateRef)//to update cart icon status
             .then(setChange(!change))
-            .then(setShow(false))
+            .then(confirm)
     }
+    function confirm() {
+        message.success({
+            content: 'Item deleted successfully',
+            duration: 1,
+            className:"message"
+        });
+      }
     let editQuantity = (op,item) => {
         op == "+" ? ++item.quantity : --item.quantity;
+        item.totalPrice=item.quantity*item.product["price"]
         cartCRUD.editItem(item.id, item)
-        .then(props.updateRef)
+        .then(props.updateRef) //updating header cart status
     }
     useEffect(() => {
         getCartItems()
@@ -38,9 +51,9 @@ const CartItemsList = (props) => {
             <h4>Total Price:{totalPrice}$</h4>
         )
     }
-
-    if (list.length > 0) {
-        return ( 
+    if(loading)
+    {
+        return (
             <>
                 <div class="card p-3">
                 <h2>Shopping cart</h2>
@@ -50,59 +63,97 @@ const CartItemsList = (props) => {
                         <td></td>
                         <td></td>
                         <td className="text-muted text-end">Price</td>
-                    </tr>
-                    {list.map((item) => {
-                        return (
-                            <tr>
-                                <td><img src={item.product.img} style={{width:100,height:100}} alt={item.product.name} /></td>
-                                <td>
-                                    <b>{item.product.name}</b>
-                                    <p>{item.product.details}</p>
-                                    {/* <div class="badge bg-light text-dark">Quantity:{item.quantity}</div> */}
-                                    <div class="input-group mb-3">
-                                        <button onClick={() => editQuantity("+", item)} class="input-group-text">+</button>
-                                        <input value={item.quantity} type="text" style={{flex:"none"}} class="form-control w-25 bg-white" disabled />
-                                        <button onClick={()=>editQuantity("-",item)} class="input-group-text">-</button>
-                                    </div>
-                                    <Link t to={"/cart"} onClick={() => { setShow(true); setId(item.id)}} style={{ textDecoration: "underline", color: "blue", cursor: "pointer" }}>delete</Link>
-                                </td>
-                                <th class="text-end">{item.totalPrice}$</th>
                             </tr>
-                        )
-                    })}
-                        </tbody>
-                        <tfoot>
-                        <td></td>
+                    <tr>
+                        <td className="col-1"> <Skeleton.Image /></td>
+                        <td className="col-10">
+                            <Skeleton active />
+                        </td>
+                        <th><Skeleton active paragraph={{ rows: 1 }}/></th>
+                    </tr>
+                </tbody>
+                <tfoot>
+                <td></td>
                         <td></td>
                             <td class="text-end">
-                                {TotalPriceCalc()}
+                            <h4>Total Price:0$</h4>
                             </td>
-                        </tfoot>
-                    </table>
-                </div>
-                <Modal show={show} onHide={()=>setShow(false)} animation={false} centered>
-                <Modal.Header closeButton>
-                <Modal.Title>Delete Item</Modal.Title>
-                </Modal.Header>
-                <Modal.Body>Delete this item?</Modal.Body>
-                <Modal.Footer>
-                <Button variant="secondary" onClick={()=>setShow(false)}>
-                    Close
-                </Button>
-                <Button variant="primary" onClick={()=>deleteItem(id)}>
-                    Delete
-                </Button>
-                </Modal.Footer>
-            </Modal>
-            </>
-         );
+                </tfoot>
+            </table>
+        </div>
+    </>
+            // <h1 className="text-muted text-center">No Items</h1>
+        )
     }
-    else 
-    {
+    else if (list.length===0) {
         return (
             <h1 className="text-muted text-center">No Items</h1>
         )
     }
+    return ( 
+        <>
+            <div class="card p-3">
+            <h2>Shopping cart</h2>
+            <table class="table">
+            <tbody>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td className="text-muted text-end">Price</td>
+                </tr>
+                {list.map((item) => {
+                    return (
+                        <tr>
+                            <td><img src={item.product.img} style={{width:100,height:100}} alt={item.product.name} /></td>
+                            <td>
+                                <b>{item.product.name}</b>
+                                <p>{item.product.details}</p>
+                                <div class="input-group mb-3">
+                                    <button onClick={() => editQuantity("+", item)} class="input-group-text">+</button>
+                                    <input value={item.quantity} type="text" style={{flex:"none"}} class="form-control w-25 bg-white" disabled />
+                                    {item.quantity > 1 ?
+                                        <button onClick={() => editQuantity("-", item)} class="input-group-text">-</button>
+                                        :
+                                        <button class="input-group-text">
+                                            <Popconfirm
+                                            title="Are you sure to delete this item?"
+                                            onConfirm={()=>deleteItem(item.id)}
+                                            okText="Yes"
+                                            cancelText="No"
+                                            placement="right"
+                                            >
+                                            <span class="fa-solid fa-trash-can"></span>
+                                        </Popconfirm>
+                                        </button>       
+                                            }
+                                </div>
+                                <Popconfirm
+                                    title="Are you sure to delete this item?"
+                                    onConfirm={()=>deleteItem(item.id)}
+                                    okText="Yes"
+                                    cancelText="No"
+                                    placement="rightTop"
+                                >
+                                    <span  style={{ textDecoration: "underline", color: "blue", cursor: "pointer" }}>delete</span>
+                                </Popconfirm>
+                            </td>
+                            <th class="text-end">{item.totalPrice}$</th>
+                        </tr>
+                    )
+                })}
+                    </tbody>
+                    <tfoot>
+                    <td></td>
+                    <td></td>
+                        <td class="text-end">
+                            {TotalPriceCalc()}
+                        </td>
+                    </tfoot>
+                </table>
+            </div>
+        </>
+     );
+    
 }
  
 

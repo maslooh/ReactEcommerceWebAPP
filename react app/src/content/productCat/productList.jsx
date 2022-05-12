@@ -1,16 +1,40 @@
-import categoriesCRUD from '../categories/dataModel'
+import categoriesCRUD from '../categories/categoryDataModel'
 import React, { useState, useEffect } from 'react';
-import {Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
+import {Skeleton } from "antd"
 import { useParams } from "react-router-dom";
 import {  Modal,Button,CloseButton } from 'react-bootstrap';
 function ProductList() {
     const [list, setList] = useState([])
+    const [loading, setLoading] = useState(true)
     let params = useParams();
     useEffect(() => {
             categoriesCRUD.getCategoryProducts(params.id)
             .then((res) => res.json())
-            .then(data => setList(data.products))
-    },[])
+                .then(data => {
+                    setList(data.products)
+                    setLoading(false)
+                    console.log(data)
+                })
+    }, [])
+    if (loading) {
+        return (
+            <div class="row row-cols-1 row-cols-md-4 g-4">
+                {[1,2,3,4].map(item => {
+                    return (
+                        <div class="col">
+                            <div class="card h-100 text-dark overflow-hidden" >
+                                <div class="card-img-top" style={{height:"150px"}}/>
+                                    <div class="card-body">
+                                        <Skeleton active/>
+                                    </div>
+                            </div>
+                        </div>
+                    )
+                })}
+            </div>
+        )
+    }
     return (
         <div class="row row-cols-1 row-cols-md-4 g-4">
                 {list.map(item => {

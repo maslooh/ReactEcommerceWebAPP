@@ -14,6 +14,7 @@ code {
 }
 .catCard{
   height: 337px;
+  
 }
 .card{
   text-decoration: none;
@@ -52,6 +53,11 @@ code {
 .CloseButton {
   top: 70px;
   left: 70px;
+}
+.message{
+  position:  fixed;
+  right: 15px;
+  bottom: 71px;
 }
 /* .searchSpace,
 .searchSpace button

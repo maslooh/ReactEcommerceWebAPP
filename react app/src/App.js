@@ -6,7 +6,7 @@ import Header from './header/Header';
 import Footer from './footer/Footer';
 import AppRouter from './router/appRouter';
 import { BrowserRouter } from 'react-router-dom';
-import cartCRUD from './content/cart/dataModel'
+import cartCRUD from './content/cart/cartDataModel'
 
 export class App extends Component {
 

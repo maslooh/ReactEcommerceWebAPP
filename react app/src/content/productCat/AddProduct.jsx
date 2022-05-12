@@ -1,5 +1,5 @@
-import productsCRUD from './dataModel'
-import categoriesCRUD from '../categories/dataModel'
+import productsCRUD from './productDataModel'
+import categoriesCRUD from '../categories/categoryDataModel'
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom'
 import { Modal } from 'react-bootstrap';

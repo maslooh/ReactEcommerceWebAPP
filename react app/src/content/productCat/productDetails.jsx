@@ -1,20 +1,23 @@
-import productsCRUD from './dataModel'
+import productsCRUD from './productDataModel'
 import React, { useState, useEffect } from 'react';
 import { useParams } from "react-router-dom";
 import {  Modal } from 'react-bootstrap';
-import cartCRUD from "../cart/dataModel"
-
+import cartCRUD from "../cart/cartDataModel"
+import {Skeleton} from "antd"
 function ProductDetails(props) {
     const [product, setProduct] = useState({})
     const [modalShow, setModalShow] = useState(false);
-    
+    const [loading, setLoading] = useState(true)
     const [qty, setQty] = useState(1)
     let params = useParams();
 
     useEffect(() => {
         productsCRUD.getProductById(params.id)
             .then((res) => res.json())
-            .then(data => setProduct(data))
+            .then(data => {
+                setProduct(data)
+                setLoading(false)
+            })
     }, [])
 
     let itemNotInCart = (product) => {
@@ -48,10 +51,26 @@ function ProductDetails(props) {
                 props.updateRef()
                 setModalShow(true)
                 setTimeout(() => {
-                    setModalShow(false)
+                setModalShow(false)
                 }, 1200);
             })
         }
+    }
+    if (loading) {
+        return (
+            <div class="card mb-3">
+            <div class="row g-0">
+                <div class="col-md-4">
+                <div  class="img-fluid rounded-start" style={{height:"300px"}}/>
+                </div>
+                <div class="col-md-8">
+                <div class="card-body">
+                        <Skeleton active paragraph={{ rows: 5 }}/>
+                    </div>
+                </div>
+            </div>
+        </div>
+        )
     }
     return (
         <div class="card mb-3">

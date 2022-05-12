@@ -17,12 +17,6 @@
       "picture": "https://blessingstelecom.com/img/developerimg/choco_blessingstelecom_20200113100659_db/mebase/CustomSectionStyle/Images/original_200219061202_5e4cd1b2c5eb3.jpg",
       "name": "Electronics",
       "description": "This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer."
-    },
-    {
-      "picture": "https://fastcdn.pro/FileGallery/sermehiranian.com/Posts/3360_SL%20CR.jpg",
-      "name": "Furniture",
-      "description": "All the furniture that you need",
-      "id": "me3yC4-"
     }
   ],
   "products": [
@@ -245,32 +239,22 @@
       "img": "https://www.greenqueen.com.hk/wp-content/uploads/2021/07/Lab-Grown-Chocolate-Could-Be-The-Future-of-Sustainable-Confectionery.jpg",
       "price": "5",
       "id": "nHEb9GI"
-    },
-    {
-      "name": "onion",
-      "categoryId": "62504905759c5a46a5f58b25",
-      "details": "red onion",
-      "code": "o-19",
-      "quantity": "200",
-      "img": "https://produits.bienmanger.com/36700-0w470h470_Organic_Red_Onion_From_Italy.jpg",
-      "price": "8",
-      "id": "StAFI4H"
     }
   ],
   "cartItems": [
     {
       "product": {
-        "id": "62504a40969455d0c15644d3",
+        "id": "62504a40aa4126f03a477f49",
         "categoryId": "62504905759c5a46a5f58b25",
-        "name": "duis do",
-        "details": "magna enim aute commodo ut mollit ex consectetur officia et",
-        "code": 6,
-        "quantity": 18,
+        "name": "veniam amet",
+        "details": "eiusmod sint quis sint anim sint aliquip est ea officia",
+        "code": 9,
+        "quantity": 13,
         "img": "https://nasijagaltangsel.websites.co.in/dummytemplate/img/product-placeholder.png",
         "price": 1200
       },
-      "quantity": 2,
-      "totalPrice": 3600,
+      "quantity": 1,
+      "totalPrice": 1200,
       "id": 1
     }
   ]
