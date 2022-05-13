@@ -17,6 +17,12 @@
       "picture": "https://blessingstelecom.com/img/developerimg/choco_blessingstelecom_20200113100659_db/mebase/CustomSectionStyle/Images/original_200219061202_5e4cd1b2c5eb3.jpg",
       "name": "Electronics",
       "description": "This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer."
+    },
+    {
+      "picture": "https://fastcdn.pro/FileGallery/sermehiranian.com/Posts/3360_SL%20CR.jpg",
+      "name": "Furniture",
+      "description": "all the furinture you need",
+      "id": "vQiuhij"
     }
   ],
   "products": [
@@ -239,23 +245,17 @@
       "img": "https://www.greenqueen.com.hk/wp-content/uploads/2021/07/Lab-Grown-Chocolate-Could-Be-The-Future-of-Sustainable-Confectionery.jpg",
       "price": "5",
       "id": "nHEb9GI"
+    },
+    {
+      "name": "couch",
+      "categoryId": "vQiuhij",
+      "details": "couch",
+      "code": "c1",
+      "quantity": "100",
+      "img": "https://www.ikea.com/us/en/images/products/morabo-sofa-gunnared-dark-gray-metal__0602115_pe680184_s5.jpg",
+      "price": "200",
+      "id": "9bvsahR"
     }
   ],
-  "cartItems": [
-    {
-      "product": {
-        "id": "62504a40aa4126f03a477f49",
-        "categoryId": "62504905759c5a46a5f58b25",
-        "name": "veniam amet",
-        "details": "eiusmod sint quis sint anim sint aliquip est ea officia",
-        "code": 9,
-        "quantity": 13,
-        "img": "https://nasijagaltangsel.websites.co.in/dummytemplate/img/product-placeholder.png",
-        "price": 1200
-      },
-      "quantity": 1,
-      "totalPrice": 1200,
-      "id": 1
-    }
-  ]
+  "cartItems": []
 }

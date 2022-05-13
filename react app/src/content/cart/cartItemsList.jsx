@@ -1,16 +1,31 @@
 
-import { useEffect, useState } from "react"
-import {Link} from "react-router-dom"
+import { useEffect, useState,useReducer } from "react"
 import cartCRUD from './cartDataModel'
-// import { Modal, Button } from 'react-bootstrap';
-import { Popconfirm, message, Skeleton } from 'antd'
+import { DeleteOutlined } from '@ant-design/icons';
+import { Popconfirm, message, Skeleton, Spin } from 'antd'
 
+const inialState = {
+    leftLoading: false,
+    rightLoading:false
+}//initialStates for useReducer
+
+const reducer = (state,action) => {
+    switch (action.type) {
+        case "+":
+            return {...state,leftLoading:!state.leftLoading}
+        case "-":
+            return { ...state,rightLoading: !state.rightLoading }
+        default:
+            return state
+    }
+}
 const CartItemsList = (props) => {
     const [loading, setLoading] = useState(true);
     const [list, setList] = useState([])
-    // const [id, setId] = useState(0)
     const [change, setChange] = useState(false)
-
+    //using reducer for multibleStates
+    const [state, dispatch] = useReducer(reducer, inialState)
+    
     let getCartItems =() => {
         cartCRUD.getAllItems()
             .then(res => res.json())
@@ -21,9 +36,11 @@ const CartItemsList = (props) => {
     }
     let deleteItem=(_id) => {
         cartCRUD.deleteItem(_id)
+            .then(() => {
+                setChange(!change)
+                confirm()
+            })
             .then(props.updateRef)//to update cart icon status
-            .then(setChange(!change))
-            .then(confirm)
     }
     function confirm() {
         message.success({
@@ -32,11 +49,13 @@ const CartItemsList = (props) => {
             className:"message"
         });
       }
-    let editQuantity = (op,item) => {
+    let editQuantity = (op, item) => {
+        dispatch({type:op})
         op == "+" ? ++item.quantity : --item.quantity;
         item.totalPrice=item.quantity*item.product["price"]
         cartCRUD.editItem(item.id, item)
-        .then(props.updateRef) //updating header cart status
+        .then(dispatch({type:op}))
+        .then(props.updateRef)//updating header cart status
     }
     useEffect(() => {
         getCartItems()
@@ -109,23 +128,27 @@ const CartItemsList = (props) => {
                                 <b>{item.product.name}</b>
                                 <p>{item.product.details}</p>
                                 <div class="input-group mb-3">
-                                    <button onClick={() => editQuantity("+", item)} class="input-group-text">+</button>
+                                    <button onClick={() => editQuantity("+", item)} class="input-group-text">
+                                        {state.leftLoading?<Spin size="small" />:"+"}
+                                    </button>
                                     <input value={item.quantity} type="text" style={{flex:"none"}} class="form-control w-25 bg-white" disabled />
                                     {item.quantity > 1 ?
-                                        <button onClick={() => editQuantity("-", item)} class="input-group-text">-</button>
+                                        <button onClick={() => editQuantity("-", item)} class="input-group-text">
+                                            {state.rightLoading?<Spin size="small" />:"-"}
+                                        </button>
                                         :
                                         <button class="input-group-text">
                                             <Popconfirm
-                                            title="Are you sure to delete this item?"
-                                            onConfirm={()=>deleteItem(item.id)}
-                                            okText="Yes"
-                                            cancelText="No"
-                                            placement="right"
+                                                title="Are you sure to delete this item?"
+                                                onConfirm={() => deleteItem(item.id)}
+                                                okText="Yes"
+                                                cancelText="No"
+                                                placement="right"
                                             >
-                                            <span class="fa-solid fa-trash-can"></span>
-                                        </Popconfirm>
-                                        </button>       
-                                            }
+                                                <DeleteOutlined />
+                                            </Popconfirm>
+                                        </button>
+                                    }
                                 </div>
                                 <Popconfirm
                                     title="Are you sure to delete this item?"
